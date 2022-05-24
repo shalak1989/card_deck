@@ -1,14 +1,12 @@
 class Card
-
-  SUITS = [
-    'clubs',
-    'spades',
-    'hearts',
-    'diamonds'
-  ]
+  SUITS = %w[
+    clubs
+    spades
+    hearts
+    diamonds
+  ].freeze
 
   # Each suit contains 13 cards, in order of rank: 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace
-
   CARD_RANKS = {
     '2' => 2,
     '3' => 3,
@@ -23,7 +21,7 @@ class Card
     'queen' => 12,
     'king' => 13,
     'ace' => 14
-  }
+  }.freeze
 
   attr_accessor :suit, :card
 
