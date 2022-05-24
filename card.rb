@@ -25,23 +25,23 @@ class Card
     'ace' => 14
   }
 
-  attr_accessor :suit, :card_rank
+  attr_accessor :suit, :card
 
   # Could separate into individual checks if more info is needed
-  def initialize(suit, card_rank)
-    throw 'invalid card creation inputs' unless valid_inputs(suit, card_rank)
+  def initialize(suit, card)
+    throw 'invalid card creation inputs' unless valid_inputs(suit, card)
 
     @suit = suit
-    @card_rank = card_rank
+    @card = card
   end
 
-  def card_value
-    CARD_RANKS[card_rank]
+  def value
+    CARD_RANKS[card]
   end
 
   private
 
-  def valid_inputs(suit, card_rank)
-    return true if SUITS.include?(suit) && CARD_RANKS[card_rank]
+  def valid_inputs(suit, card)
+    return true if SUITS.include?(suit) && CARD_RANKS[card]
   end
 end
